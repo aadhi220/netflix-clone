@@ -1,0 +1,53 @@
+
+
+
+
+.banner-content {
+    position: absolute;
+   width: 70%;
+    bottom: 3%;
+    left: 5%;
+    height: 250px;
+}
+
+.banner-content>h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+
+}
+.banner-content>span
+ {
+justify-content: center;
+}
+
+.banner {
+    position: relative;
+    height: 600px;
+    background-size: cover;
+    overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+    .banner {
+     height: 80vh;
+     background-size: cover;
+     background-position: center;
+    } }
+
+@media only screen and (max-width: 600px) {
+   .banner {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+   }
+   .banner-content {
+    height: fit-content;
+   }
+   .banner-content>h1 {
+    font-size: 2rem;
+    display: none;
+    
+   }
+   .banner-content>span {
+    display: none;
+   }
+  }
