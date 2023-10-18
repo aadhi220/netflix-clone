@@ -12,23 +12,22 @@ export default function Carousal({ fetchUrl }) {
 
   useEffect(() => {
     fetchData();
+    const fetchDataInterval = setInterval(() => {
+      fetchData();
+    }, 5000); // 10000 milliseconds = 10 seconds
+  
+    // Cleanup the interval when the component unmounts or when the dependency array changes
+    return () => clearInterval(fetchDataInterval);
   }, []);
 
-  const refreshInterval = 10000; // 10 seconds in milliseconds
+  
 
-  const refreshDataPeriodically = () => {
-    setInterval(() => {
-      fetchData();
-    }, refreshInterval);
-  };
-
-  // Start the periodic refresh
-  refreshDataPeriodically();
+ 
 
   return (
     <div
       className="banner"
-      style={{ backgroundImage: `url(${baseUrl}/${movie?.backdrop_path})` }}
+      style={{ backgroundImage: `url(${baseUrl}/${movie?.poster_path})` }}
     >
       <div className="banner-content">
         <h1>{movie?.name}</h1>
